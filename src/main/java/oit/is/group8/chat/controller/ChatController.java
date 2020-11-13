@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class Controller {
+public class ChatController {
 
   /**
    * sample21というGETリクエストがあったら，sample21()を呼び出して，sample21.htmlを返すメソッド
