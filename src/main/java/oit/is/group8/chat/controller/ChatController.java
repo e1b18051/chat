@@ -5,9 +5,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@RequestMapping("/home")
 public class ChatController {
 
   /**
@@ -15,9 +17,14 @@ public class ChatController {
    *
    * @return
    */
-  @GetMapping("/home")
+  @GetMapping("/output")
+  public String home(@RequestParam String name, ModelMap model) {
+    model.addAttribute("name", name);
+    return "home.html";
+
+  }
+  @GetMapping("")
   public String home() {
     return "home.html";
   }
-
 }
